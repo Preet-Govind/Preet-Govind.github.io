@@ -116,3 +116,113 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+/* Certifications section styling */
+#certifications {
+    margin-bottom: 40px;
+}
+
+#certifications h2 {
+    border-bottom: 1px solid #c9d1d9;
+    padding-bottom: 10px;
+}
+
+#certifications ul {
+    list-style: none;
+    padding: 0;
+}
+
+#certifications ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #21262d;
+    border-radius: 4px;
+}
+
+nav a,
+footer a {
+    color: #58a6ff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 2px 4px;
+    transition: color 0.3s ease;
+}
+
+nav a::before,
+footer a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 4px;
+    background: rgba(88, 166, 255, 0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+nav a:hover,
+footer a:hover {
+    color: #fff;
+}
+
+nav a:hover::before,
+footer a:hover::before {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Glowing animation for links */
+nav a,
+footer a {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(88, 166, 255, 0.5),
+                    0 0 10px rgba(88, 166, 255, 0.4),
+                    0 0 15px rgba(88, 166, 255, 0.3);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(88, 166, 255, 0.7),
+                    0 0 20px rgba(88, 166, 255, 0.6),
+                    0 0 30px rgba(88, 166, 255, 0.5);
+    }
+}
+
+/* Optional: Adjust hover effects for link underlines */
+nav a:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.Certifications-item {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+.Certifications-item:last-child {
+    border-bottom: none;
+}
+
+.institution {
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+.course {
+    color: #f08080;
+    font-weight: bold;
+}
+
+
+.grade, .cgpa {
+    color: #ff6347;
+    font-weight: bold;
+}
