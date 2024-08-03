@@ -17,10 +17,10 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#internships">Internships</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#awards">Awards</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#resume">Resume</a></li>
         </ul>
     </nav>
@@ -35,7 +35,7 @@
             <p>📞 Phone: (+91) 847 592 9809</p>
             <p>🐙 GitHub: <a href="https://github.com/Preet-Govind" target="_blank">Preet-Govind</a></p>
             <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/preet-govind-400ab615/" target="_blank">Preet Govind</a></p>
-            <p>📊 GitLab: <a href="https://gitlab.com/your-gitlab-username" target="_blank">GitLab Profile</a></p>
+            <p>🔗 GitLab: <a href="https://gitlab.com/your-gitlab-username" target="_blank">GitLab Profile</a></p>
             <p>🌐 Netlify App: <a href="https://preet-govind.netlify.app" target="_blank">preet-govind.netlify.app</a></p>
         </section>
 
@@ -43,9 +43,10 @@
             <h2>Skills</h2>
             <ul>
                 <li><strong>Programming Languages:</strong> C#, Java, Python, Bash Shell Scripting</li>
-                <li><strong>Frameworks:</strong> ASP.NET MVC, SpringMVC, Flask</li>
+                <li><strong>Frameworks:</strong> ASP.NET MVC , SpringMVC, Flask</li>
                 <li><strong>Databases:</strong> OracleDB, SQL Server</li>
-                <li><strong>Technologies:</strong> ETL, Apache Hadoop</li>
+                <li><strong>Data Engineering :</strong> ETL, Apache Hadoop</li>
+                <li><strong>Cloud Platforms :</strong> Azure </li>
                 <li><strong>Domains:</strong> Data Science, Machine Learning, Deep Learning</li>
             </ul>
         </section>
@@ -53,7 +54,7 @@
         <section id="experience">
             <h2>Experience</h2>
             <h3>National Informatics Center Services Incorp</h3>
-            <h4>Software Developer - Level 4</h4>
+            <h4 style="color: #f08080;">Software Developer - Level 4</h4>
             <p><em>MAY 2023 - PRESENT, Dehradun</em></p>
             <ul>
                 <li>Lead development projects for the State Planning Commission (Uttarakhand) and the Financial Data Center (UK Government).</li>
@@ -69,35 +70,12 @@
             </ul>
         </section>
 
-        <section id="internships">
-            <h2>Internships</h2>
-
-            <h3>Big Data and Hadoop</h3>
-            <h4>National Institute of Electronics and Information Technology (NIELIT), New Delhi</h4>
-            <p><em>JUNE - JULY 2019</em></p>
-            <ul>
-                <li>Introduction to Big Data Hadoop, working with Hadoop, and Map Reduce.</li>
-                <li>Programming using Java with Pig and Hive programming.</li>
-                <li>Learned and earned experience working on big data models and Big Data Engineering.</li>
-                <li>Secured Marks 64% in the exam held by NIELIT.</li>
-            </ul>
-
-            <h3>ASP.NET with C#</h3>
-            <h4>NIELIT, New Delhi</h4>
-            <p><em>JUNE - JULY 2018</em></p>
-            <ul>
-                <li>Wrote code for secured login and registration page.</li>
-                <li>Developed a Windows executable program for Morse Code – English translator.</li>
-                <li>Secured grade 74% in the exam held by NIELIT.</li>
-            </ul>
-        </section>
-
         <section id="education">
             <h2>Education</h2>
             <h3>Uttarakhand Technical University</h3>
-            <p>BTech in Computer Science & Engineering</p>
+            <p class="course">BTech in Computer Science & Engineering</p>
             <p><em>JUNE 2016 - JUNE 2020, Uttarakhand</em></p>
-            <p>CGPA: 7.21</p>
+            <p class="cgpa">CGPA: 7.21</p>
         </section>
 
         <section id="projects">
@@ -119,12 +97,29 @@
         <section id="awards">
             <h2>Awards</h2>
             <ul>
-                <li>Gold Medalist and ‘A’ Level Certified - National Cadet Corps (NCC)</li>
-                <li>First Position: Tabla Solo Instrumental - Zonal Level Competition, Delhi (NCT)</li>
+                <li><p class="cgpa"> Gold Medalist and ‘A’ Level Certified </p> - National Cadet Corps (NCC)</li>
+                <li><p class="cgpa">First Position: Tabla Solo Instrumental </p>- Zonal Level Competition, Delhi (NCT)</li>
             </ul>
         </section>
 
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="Certifications-item">
+        <div class="institution">Stanford University & DeepLearning.ai (Andrew NG) - Coursera</div>
+        <div class="course">Machine Learning Specialization</div>
+        <div><em>MAY - JUNE 2024</em></div>
+        <div class="grade">Grades: <span class="grade">100%</span></div>
+    </div>
+    <div class="Certifications-item">
+        <div class="institution">National Programme for Technology Enhanced Learning (NPTEL)</div>
+        <div class="course">Database Management System (DBMS) - IIT Kharagpur</div>
+        <div><em>FEBRUARY - MARCH 2018</em></div>
+        <div class="cgpa">CGPA: <span class="cgpa">5.26</span></div>
+    </div>
+        </section>
+
         <section id="resume">
+        <nav>
             <h2>Resume</h2>
             <button id="viewResume">View Resume</button>
             <a href="PreetGovind_Resume.pdf" download>Download Resume</a>
@@ -136,11 +131,12 @@
                     <iframe src="PreetGovind_Resume.pdf" width="100%" height="500px" frameborder="0"></iframe>
                 </div>
             </div>
+            </nav>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Preet Govind. All rights reserved.</p>
+        <p>&copy; 2024 Preet Govind. All rights reserved under GNU GPL 2.0.</p>
     </footer>
 
     <script src="script.js"></script>
