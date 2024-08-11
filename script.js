@@ -21,20 +21,37 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    const skillsList = document.querySelectorAll('.skills-list li');
-    const skillDetail = document.querySelector('.skill-detail');
+    const blogContainer = document.getElementById('blog-container');
+    const repoUrl = 'https://api.github.com/repos/Preet-Govind/Preet-Govind.github.io/contents/blogs';
 
-    skillsList.forEach(skill => {
-        skill.addEventListener('click', function () {
-            const detailText = this.getAttribute('data-detail');
-            skillDetail.textContent = detailText;
-            skillDetail.classList.toggle('active');
-        });
+    fetch(repoUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Process and display the blog files
+            data.forEach(file => {
+                if (file.type === 'file' && file.name.endsWith('.html')) {
+                    const blogCard = document.createElement('div');
+                    blogCard.classList.add('blog-card');
+                    
+                    blogCard.innerHTML = `
+                        <div class="blog-content">
+                            <h3>${file.name.replace('.html', '').replace(/-/g, ' ')}</h3>
+                            <a href="blogs/${file.name}" target="_blank">Read more</a>
+                        </div>
+                    `;
 
-        skill.addEventListener('mouseleave', function () {
-            skillDetail.classList.remove('active');
+                    blogContainer.appendChild(blogCard);
+                }
+            });
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            blogContainer.innerHTML = '<p>Unable to load blogs at this time.</p>';
         });
-    });
 });

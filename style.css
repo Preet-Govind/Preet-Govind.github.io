@@ -335,3 +335,64 @@ a {
 a:hover {
     color: #e6e6e6; /* Light gray on hover for a distinct look */
 }
+
+/**/
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.blog-card {
+    background-color: #161b22;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(88, 166, 255, 0.5);
+}
+
+.blog-content h3 {
+    color: #58a6ff;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.blog-content a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s, text-shadow 0.2s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.blog-content a:hover {
+    text-decoration: underline;
+    color: #d1eaff;
+    text-shadow: 0 0 8px rgba(88, 166, 255, 0.8);
+}
+
+
+/*anchor tag styling*/
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #d1eaff;
+    text-shadow: 0 0 8px rgba(88, 166, 255, 0.8);
+}
