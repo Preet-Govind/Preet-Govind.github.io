@@ -63,3 +63,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const skillsList = document.querySelectorAll('.skills-list li');
+    const skillDetail = document.querySelector('.skill-detail');
+
+    skillsList.forEach(skill => {
+        skill.addEventListener('click', function () {
+            const detailText = this.getAttribute('data-detail');
+            skillDetail.textContent = detailText;
+            skillDetail.classList.toggle('active');
+        });
+
+        skill.addEventListener('mouseleave', function () {
+            skillDetail.classList.remove('active');
+        });
+    });
+});
