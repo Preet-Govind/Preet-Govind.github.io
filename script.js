@@ -33,21 +33,28 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            // Process and display the blog files
-            data.forEach(file => {
-                if (file.type === 'file' && file.name.endsWith('.html')) {
-                    const blogCard = document.createElement('div');
-                    blogCard.classList.add('blog-card');
-                    
-                    blogCard.innerHTML = `
-                        <div class="blog-content">
-                            <h3>${file.name.replace('.html', '').replace(/-/g, ' ')}</h3>
-                            <a href="blogs/${file.name}" target="_blank">Read more</a>
-                        </div>
-                    `;
+            // Filter out only .html files
+            const htmlFiles = data.filter(file => file.type === 'file' && file.name.endsWith('.html'));
 
-                    blogContainer.appendChild(blogCard);
-                }
+            // Sort files by modification date in descending order
+            htmlFiles.sort((a, b) => new Date(b.commit.committer.date) - new Date(a.commit.committer.date));
+
+            // Take only the 4 most recent files
+            const recentFiles = htmlFiles.slice(0, 4);
+
+            // Process and display the blog files
+            recentFiles.forEach(file => {
+                const blogCard = document.createElement('div');
+                blogCard.classList.add('blog-card');
+                
+                blogCard.innerHTML = `
+                    <div class="blog-content">
+                        <h3>${file.name.replace('.html', '').replace(/-/g, ' ')}</h3>
+                        <a href="blogs/${file.name}" target="_blank">Read more</a>
+                    </div>
+                `;
+
+                blogContainer.appendChild(blogCard);
             });
         })
         .catch(error => {
@@ -55,3 +62,4 @@ document.addEventListener('DOMContentLoaded', function () {
             blogContainer.innerHTML = '<p>Unable to load blogs at this time.</p>';
         });
 });
+

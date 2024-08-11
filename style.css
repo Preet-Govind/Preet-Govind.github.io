@@ -396,3 +396,9 @@ a:hover {
     color: #d1eaff;
     text-shadow: 0 0 8px rgba(88, 166, 255, 0.8);
 }
+
+.breaker
+{
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
